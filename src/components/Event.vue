@@ -1,9 +1,7 @@
 <template>
   <div class="events">
     <h1>{{ msg }}</h1>
-    <h2>From store: {{str}}</h2>
-    <!-- <h2>From AJAX store: {{allVenues}}</h2> -->
-    <!-- <button @click="getAllVenues">AJAX Test</button> -->
+    <h2>Value from store: {{str}}</h2>
 
     <table>
       <thead>
@@ -25,7 +23,7 @@ export default {
   name: 'events',
   data () {
     return {
-      msg: '\'vents paaage init'
+      msg: 'Events'
     }
   },
   mounted: function () {
@@ -52,45 +50,27 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+tr {
+  line-height: 2em;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+thead {
+  background-color: #CCC;
 }
 
-a {
-  color: #42b983;
+tbody tr:hover {
+  background-color: #EEE;
 }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  tr {
-    line-height: 2em;
-  }
-
-  thead {
-    background-color: #CCC;
-  }
-
-  tbody tr:hover {
-    background-color: #EEE;
-  }
-
-  table, th, td {
-    border: 1px solid red;
-  }
+table, th, td {
+  border: 1px solid #333;
+}
 
 </style>

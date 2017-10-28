@@ -2,7 +2,6 @@
   <div id="app">
     <Top></Top>
     <main>
-      <p>Something from app</p>
       <router-view></router-view>
     </main>
     <Bottom></Bottom>
@@ -20,16 +19,56 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html, body {
+  height: 100%;
 }
 
-div, footer, header, main {
-  border: 1px solid red;
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #333;
+
+  min-height: 100%;
+
+  display: grid;
+  grid-template-rows: 2fr 10fr auto;
+  /*
+    FIXME: This doesn't work for the header when the page
+    gets long in length as the header expands to fill its
+    fractional portion. How to set size but with avoiding
+    hard-coding specific values?
+  */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dark {
+  background-color: #333;
+  color: #EEE;
+}
+
+.dark a {
+  color: #EEE;
+}
+
+main {
+  display: grid;
+  align-items: center;
 }
 
 /* https://stackoverflow.com/a/23155413/1433614 */

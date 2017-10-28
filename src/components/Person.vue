@@ -115,6 +115,7 @@ export default {
   table {
     width: 100%;
     border-collapse: collapse;
+    padding: 5px;
   }
 
   tr {
@@ -128,9 +129,4 @@ export default {
   tbody tr:hover {
     background-color: #EEE;
   }
-
-  table, th, td {
-    border: 1px solid red;
-  }
-
 </style>

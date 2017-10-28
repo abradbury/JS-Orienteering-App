@@ -1,6 +1,7 @@
 <template>
-  <div class="club">
-    <h1>Club: {{ id.toUpperCase() }}</h1>
+  <div class="fourOhFour">
+    <h1>Oops</h1>
+    <h2>{{msg}}</h2>
   </div>
 </template>
 
@@ -8,11 +9,10 @@
 
 <script>
 export default {
-  name: 'club',
-  props: ['id'],
+  name: 'fourOhFour',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: this.$route.path + ' does not exist'
     }
   }
 }

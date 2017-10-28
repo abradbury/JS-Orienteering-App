@@ -1,8 +1,10 @@
 <template>
   <div class="searchBar">
-    <h1>{{ msg }}</h1>
-    <h2>Boyha</h2>
-    <input autofocus v-bind:placeholder="placeholder" type="text" />
+    <form>
+      <input autofocus v-bind:placeholder="placeholder" type="search" aria-describedby="searchHint" />
+      <input type="submit" value="Search">
+    </form>
+    <span id="searchHint">{{ hint }}</span>
   </div>
 </template>
 
@@ -11,53 +13,14 @@ export default {
   name: 'searchBar',
   data () {
     return {
-      msg: 'dis a search bar',
-      placeholder: 'Enter search term...'
+      placeholder: 'Enter search term...',
+      hint: 'Some search hint...'
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  /*table {
-      border-collapse: collapse;
-      border-spacing: 0;
-      empty-cells: show;
-      border: 1px solid #cbcbcb;
-      width: 100%;
-      margin: 20px 0;
-  }
-
-  table caption {
-      color: #000;
-      font: italic 85%/1 arial, sans-serif;
-      padding: 1em 0;
-      text-align: center;
-  }
-
-  table td,
-  table th {
-      border-left: 1px solid #cbcbcb;
-      border-width: 0 0 0 1px;
-      font-size: inherit;
-      margin: 0;
-      overflow: visible;
-      padding: 0.5em 1em;
-  }
-
-  table td:first-child,
-  table th:first-child {
-      border-left-width: 0;
-  }
-
-  table thead {
-      background-color: #e0e0e0;
-      color: #000;
-      text-align: left;
-      vertical-align: bottom;
-  } */
-
   input {
       width: 100%;
       height: 2em;
@@ -72,12 +35,6 @@ export default {
       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
       box-sizing: border-box;         /* Opera/IE 8+ */
   }
-
-  /*input:focus {
-    outline: none;
-    border-width: 0 0 4px 0;
-    border-color: #777;
-  }*/
 
   form {
     width: 60%;
