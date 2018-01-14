@@ -30,13 +30,19 @@ export default {
 </script>
 
 <<style>
-/* Below fold from: https://stackoverflow.com/a/8993666/1433614 */
-/* footer .belowFold {
-    position: absolute;
-    top:100%;
-    left:0px;
-    right:0px;
-} */
+footer {
+  display: grid;
+  align-items: center;
+}
+
+footer .aboveFold {
+  background-color: green;
+  height: 5em;
+}
+
+footer .belowFold {
+  background-color: blue;
+}
 
 footer .belowFold nav ul {
   background-color: red;

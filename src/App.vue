@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style>
+/* --------------------------------- Common -------------------------------- */
 html, body {
   height: 100%;
 }
@@ -29,17 +30,24 @@ html, body {
   color: #333;
 
   min-height: 100%;
-
-  display: grid;
-  grid-template-rows: 2fr 10fr auto;
-  /*
-    FIXME: This doesn't work for the header when the page
-    gets long in length as the header expands to fill its
-    fractional portion. How to set size but with avoiding
-    hard-coding specific values?
-  */
 }
 
+main {
+  display: grid;
+  align-items: center;
+  min-height: calc(100vh - 10em);
+}
+
+.dark {
+  background-color: #333;
+  color: #EEE;
+}
+
+.dark a {
+  color: #EEE;
+}
+
+/* ------------------------------- Navigation ------------------------------ */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -57,22 +65,12 @@ nav li a {
     text-decoration: none;
 }
 
-.dark {
-  background-color: #333;
-  color: #EEE;
+nav a:hover, nav a:focus {
+  border-bottom: 5px solid red;
 }
 
-.dark a {
-  color: #EEE;
-}
-
-main {
-  display: grid;
-  align-items: center;
-}
-
-/* https://stackoverflow.com/a/23155413/1433614 */
-/* headlines with lines */
+/* ------------------------- headlines with lines -------------------------- */
+/* From: https://stackoverflow.com/a/23155413/1433614 */
 .decorated{
      overflow: hidden;
      text-align: center;
