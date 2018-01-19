@@ -14,7 +14,7 @@
             </router-link>
           </li>
         <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/club">Club</router-link></li>
+        <li><router-link to="/clubs">Clubs</router-link></li>
         <li><router-link to="/event">Event</router-link></li>
       </ul>
     </nav>

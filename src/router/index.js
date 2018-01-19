@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/components/Home'
-import Club from '@/components/Club'
+import Clubs from '@/components/Clubs'
 import Event from '@/components/Event'
 import Person from '@/components/Person'
 import FourOhFour from '@/components/FourOhFour'
@@ -17,10 +17,9 @@ export default new Router({
       name: 'Home',
       component: Home
     }, {
-      path: '/club/:id?',
-      name: 'Club',
-      component: Club,
-      props: true
+      path: '/clubs',
+      name: 'Clubs',
+      component: Clubs
     }, {
       path: '/event',
       name: 'Event',

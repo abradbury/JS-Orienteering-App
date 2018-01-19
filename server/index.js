@@ -22,7 +22,7 @@ MongoClient.connect("mongodb://localhost:27017/Orienteering", function (err, db)
 
   app.get('/clubs', function (req, res) {
     console.log('Received API request for all clubs')
-    db.collection('results').distinct('results.club', function (err, result) {
+    db.collection('clubs').find().sort({ "name": 1}).toArray(function (err, result) {
       if (err) throw err
       res.json(result)
     })
