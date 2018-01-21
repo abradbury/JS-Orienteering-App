@@ -5,6 +5,7 @@ import Home from '@/components/Home'
 import Clubs from '@/components/Clubs'
 import Event from '@/components/Event'
 import Person from '@/components/Person'
+import About from '@/components/About'
 import FourOhFour from '@/components/FourOhFour'
 
 Vue.use(Router)
@@ -28,6 +29,10 @@ export default new Router({
       path: '/person',
       name: 'Person',
       component: Person
+    }, {
+      path: '/about',
+      name: 'About',
+      component: About
     }, {
       path: '*',
       name: 'FourOhFour',

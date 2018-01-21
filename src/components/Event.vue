@@ -2,6 +2,7 @@
   <div class="events">
     <h1>{{ msg }}</h1>
     <h2>Value from store: {{str}}</h2>
+    <p>Simulating delay...</p>
 
     <table>
       <thead>

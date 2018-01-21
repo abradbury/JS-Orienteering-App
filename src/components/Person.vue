@@ -1,7 +1,6 @@
 <template>
   <div class='person'>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h1>{{ person.name }}</h1>
     <table>
       <caption class="decorated"><span>{{caption}}</span></caption>
       <thead>
@@ -32,7 +31,11 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      person: {
+        name: 'John Smith',
+        current_club: 'SYO',
+        current_age_class: 'M50'
+      },
       caption: 'Your runs',
       columns: ['date', 'name', 'venue'],
       runs: [
@@ -114,7 +117,6 @@ export default {
 <style scoped>
   table {
     width: 100%;
-    border-collapse: collapse;
     padding: 5px;
   }
 

@@ -51,3 +51,5 @@ npm test
  - Incorporate server code into dev-tools and hot reloading
  - Decide how to handle database errors i.e. how should they be presented to the user? (include retry if server is not around)
  - Mock MongoDB such that the application can be started without it (at least in a minimal state)
+
+ - Switch to using `rem` as CSS sizing, avoid pixels

@@ -1,6 +1,6 @@
 <template>
   <div class="clubs">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg | capitalize }}</h1>
     <p>{{ allClubs.length }} clubs found</p>
 
     <table>
@@ -13,7 +13,8 @@
         <tr v-for="club in allClubs" v-bind:key="club.id">
           <td class="club-result">
             <div class="club-result-image">
-              <img src="http://via.placeholder.com/150x150" />
+              <img v-if="club.name === 'AIRE'" src="../assets/img/club/logos/full/159474f9ff503ef6f77ef885262bf52bb8a1b49a.jpg" />
+              <img v-else src="http://via.placeholder.com/150x150" />
             </div>
             <div class="club-result-text">
               <h2>{{ club.name }}</h2>
@@ -33,6 +34,11 @@
 export default {
   name: 'clubs',
   props: ['id'],
+  filters: {
+    capitalize: function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+  },
   data () {
     return {
       msg: 'clubs'
@@ -64,10 +70,10 @@ table {
 }
 
 .club-result {
-  background-color: beige;
   padding: 1em;
   margin: 1em;
-  border: 1px solid grey;
+  border-bottom: 1px solid darkorange;
+  border-top: 1px solid darkorange;
 }
 
 .club-result-image, .club-result-text {
@@ -77,6 +83,10 @@ table {
 .club-result-image {
   float: left;
   margin-right: 1em;
+}
+
+.club-result-image img {
+  max-width: 150px;
 }
 
 </style>

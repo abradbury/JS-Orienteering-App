@@ -22,12 +22,13 @@ export default {
 /* --------------------------------- Common -------------------------------- */
 html, body {
   height: 100%;
+  background-color: #333;
 }
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #333;
+  color: #EEE;
 
   min-height: 100%;
 }
@@ -38,12 +39,26 @@ main {
   min-height: calc(100vh - 10em);
 }
 
-.dark {
-  background-color: #333;
-  color: #EEE;
+a, a:visited {
+  color: darkorange;
 }
 
-.dark a {
+a:hover, a:focus {
+  color: orangered;
+}
+
+button, input[type='submit'] {
+  background-color: darkorange;
+}
+
+button:hover, button:focus,
+input[type='submit']:hover, input[type='submit']:focus {
+  background-color: orangered;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: #111;
   color: #EEE;
 }
 
@@ -63,6 +78,7 @@ nav li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
 nav a:hover, nav a:focus {
