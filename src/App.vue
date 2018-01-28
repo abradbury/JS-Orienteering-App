@@ -35,8 +35,15 @@ html, body {
 
 main {
   display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
   align-items: center;
   min-height: calc(100vh - 10em);
+}
+
+main div:first-child {
+  grid-column: 3 / 11;
+  align-self: center;
 }
 
 a, a:visited {
@@ -45,16 +52,23 @@ a, a:visited {
 
 a:hover, a:focus {
   color: orangered;
+  transition-duration: 0.2s;
 }
 
 button, input[type='submit'] {
   background-color: darkorange;
+  box-shadow: 5px 5px 0px rgba(255, 115, 0, 0.2);
 }
 
 button:hover, button:focus,
 input[type='submit']:hover, input[type='submit']:focus {
   background-color: orangered;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.267);
   cursor: pointer;
+}
+
+button:active, input[type='submit']:active {
+  box-shadow: inset 5px 5px 0 rgba(0, 0, 0, 0.6), 5px 5px 0px orangered;
 }
 
 .dark {
@@ -67,7 +81,6 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 nav li {
@@ -76,13 +89,14 @@ nav li {
 
 nav li a {
     text-align: center;
-    padding: 14px 16px;
+    padding: 8px 16px;
     text-decoration: none;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav a:hover, nav a:focus {
-  border-bottom: 5px solid red;
+  border-bottom: 5px solid orangered;
 }
 
 /* ------------------------- headlines with lines -------------------------- */

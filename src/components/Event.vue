@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 table {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border-collapse: collapse;
 }
