@@ -15,6 +15,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "d3": "^5.1.0",
     "express": "^4.16.2",
     "jquery": "^3.2.1",
     "mongodb": "^2.2.34",

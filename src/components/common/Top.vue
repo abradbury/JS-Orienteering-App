@@ -1,23 +1,37 @@
 <template>
   <header class="top dark">
+    <!-- <span class="start">
+      <svg width="100" height="100">
+        <polygon points="50,25 25,75 75,75" stroke="#FF00FF" stroke-width="5" fill="none" />
+      </svg>
+    </span>
+
+    <span class="control">
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="30" stroke="#FF00FF" stroke-width="5" fill="none" />
+      </svg>
+    </span> -->
+
     <nav role="nav">
       <ul>
         <li>
             <router-link to="/">
-              <span class="logo">
-                <svg width="50" height="50">
-                  <circle cx="25" cy="25" r="20" stroke="#FF00FF" stroke-width="3" fill="none" />
-                  <circle cx="25" cy="25" r="15" stroke="#FF00FF" stroke-width="3" fill="none" />
-                </svg>
-              </span>
               <span>Home</span>
             </router-link>
           </li>
         <li><router-link to="/about">About</router-link></li>
         <li><router-link to="/clubs">Clubs</router-link></li>
         <li><router-link to="/event">Event</router-link></li>
+        <li><router-link to="/person">Person</router-link></li>
       </ul>
     </nav>
+
+    <!-- <span class="finish">
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="35" stroke="#FF00FF" stroke-width="5" fill="none" />
+        <circle cx="50" cy="50" r="25" stroke="#FF00FF" stroke-width="5" fill="none" />
+      </svg>
+    </span> -->
   </header>
 </template>
 

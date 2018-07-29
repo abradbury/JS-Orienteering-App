@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Home from '@/components/Home'
 import Clubs from '@/components/Clubs'
+import Club from '@/components/Club'
 import Event from '@/components/Event'
 import Person from '@/components/Person'
 import About from '@/components/About'
@@ -21,6 +22,10 @@ export default new Router({
       path: '/clubs',
       name: 'Clubs',
       component: Clubs
+    }, {
+      path: '/club',
+      name: 'Club',
+      component: Club
     }, {
       path: '/event',
       name: 'Event',

@@ -11,39 +11,17 @@ Initially, I decided to go with a ReactJS frontend, based on a recommendation fr
 After a tad of research (JavaScript fatigue is real), I switched to VueJS. My initial impression was very positive, it was very easy to get started with the excellent CLI and documentation. Based on the [Vue.JS webpack template](http://vuejs-templates.github.io/webpack/).
 
 ## Usage
-Currently, several services have to be started to run the application. Ideally these should be combined into a single one.
+Currently, several services have to be started to run the application. Ideally these should be combined into a single one. It doesn't seem possible to do using NPM scripts. NPM scripts can use `&&` but the `mongod` command runs until it is killed. [Pre and post hooks](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/#pre-and-post-hooks) seemed like an option, but here there are 3 commands to merge, plus [shutting down the database when finished](http://antrikshy.com/blog/run-mongodb-automatically-nodejs-project), which is too many. Perhaps some other task runner is needed like Gulp or Grunt?
 
 ``` bash
 # Start the MongoDB daemon process
 mongod
 
-# Start the server
-node server/index.js
+# Start the API server
+node api/index.js
 
 # Start the main application
 npm run dev
-
-# --------------------------------------------------------
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 
 ```
 

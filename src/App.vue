@@ -52,7 +52,6 @@ a, a:visited {
 
 a:hover, a:focus {
   color: orangered;
-  transition-duration: 0.2s;
 }
 
 button, input[type='submit'] {

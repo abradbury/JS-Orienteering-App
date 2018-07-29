@@ -2,23 +2,23 @@ const express = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient
 
+// Uses ExpressJS to create a RESTful API to expose data in MongoDB
+
+// TODO: Remove this hard-coded path to a configuration file
 MongoClient.connect("mongodb://localhost:27017/Orienteering", function (err, db) {
   if (err) throw err
 
-  console.log("Hi there")
-
   app.listen(3000, function () {
-    console.log('listening on 3000')
+    console.log('API started on port 3000')
   })
 
+  // Allow requests from the web server
   // From: https://enable-cors.org/server_expressjs.html
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:8080");
     res.header("Access-Control-Allow-Methods", "GET");
-    // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+    next(); // Calls the next function to be executed after this one
   });
-
 
   app.get('/clubs', function (req, res) {
     console.log('Received API request for all clubs')
