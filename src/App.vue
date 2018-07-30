@@ -31,19 +31,31 @@ html, body {
   color: #EEE;
 
   min-height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+h1 {
+  text-align: left;
+  font-size: 3em;
 }
 
 main {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  /* grid-template-columns: repeat(12, 1fr); */
 
   align-items: center;
   min-height: calc(100vh - 10em);
 }
 
-main div:first-child {
-  grid-column: 3 / 11;
+main, header, footer {
+  grid-column: 2 / 12;
   align-self: center;
+}
+
+main {
+  margin-bottom: 1em;
 }
 
 a, a:visited {

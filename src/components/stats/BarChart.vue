@@ -1,35 +1,19 @@
 <template>
-  <div class="mm">
-    <svg class="chart"></svg>
-    <svg class="chart2"></svg>
-  </div>
+  <svg class='chart'></svg>
 </template>
 
 <script>
 import * as d3 from 'd3'
 
 export default {
-  name: 'vue-line-chart',
-  data () {
-    return {
-      data: [
-        {date: Date('2018-01-01'), count: 99},
-        {date: Date('2017-01-01'), count: 71},
-        {date: Date('2016-01-01'), count: 78},
-        {date: Date('2015-01-01'), count: 25},
-        {date: Date('2014-01-01'), count: 36},
-        {date: Date('2013-01-01'), count: 90}
-      ],
-      line: '',
-
-      points: [],
-      lastUpdated: ''
-      // multiple series...
+  name: 'vue-bar-chart',
+  props: {
+    data: {
+      required: true
     }
   },
   mounted () {
     this.createBarChart()
-    this.createLineChart()
   },
   methods: {
     createScales (data, width, height) {
@@ -45,32 +29,11 @@ export default {
         .range([0, height])
         .clamp(true)  // restrict to domain values
 
-      return {xScale, yScale}
+      return [xScale, yScale]
     },
 
     createAxis () {
 
-    },
-
-    createLineChart () {
-      var width = 500
-      var height = 400
-
-      var [xScale, yScale] = this.createScales(this.data, width, height)
-
-      var chart = d3.select('.chart2')
-        .attr('width', width)
-        .attr('height', height)
-
-      var point = chart.selectAll('g')
-        .data(this.data)
-        .enter().append('g')
-        .attr('transform', function (d, i) { return 'translate(0,20)' })
-
-      point.append('path')
-        .attr('d', d3.line()
-          .x((d, i) => xScale(i))
-          .y(d => yScale(d)))
     },
 
     createBarChart () {
